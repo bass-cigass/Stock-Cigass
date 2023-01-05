@@ -6,11 +6,11 @@ import { AppService } from './app.service';
 import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from './config/constants';
 import { ProductsModule } from './products/products.module';
 import { EmplacementModule } from './emplacement/emplacement.module';
-import { ProjetModule } from './projet/projet.module';
 import { TypeModule } from './type/type.module';
 import { ReactifsModule } from './reactifs/reactifs.module';
 import { UsersModule } from './users/users.module';
 import { MagasinModule } from './magasin/magasin.module';
+import { ProjetModule } from './projet/projet.module';
 
 @Module({
   imports: [ConfigModule.forRoot( { 
@@ -22,12 +22,12 @@ import { MagasinModule } from './magasin/magasin.module';
       useFactory: (configService: ConfigService) => ({
         type: 'mysql',
         host: configService.get<string>(DB_HOST),
-        port: +configService.get<number>(DB_PORT),
         username: configService.get(DB_USER),
         password: configService.get(DB_PASSWORD),
         database: configService.get<string>(DB_DATABASE),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
+        
       }),
       inject: [ConfigService],
     }),
@@ -42,4 +42,5 @@ import { MagasinModule } from './magasin/magasin.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+}

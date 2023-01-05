@@ -1,6 +1,5 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post, Res } from '@nestjs/common';
 import { EmplacementEntity } from 'src/emplacement/emplacement.entity';
-import { ProjetEntity } from 'src/projet/projet.entity';
 import { TypeEntity } from 'src/type/type.entity';
 import { ProductsDTO } from './products.dto';
 import { ProductsService } from './products.service';
@@ -52,7 +51,7 @@ export class ProductsController {
       }
 
       @Patch(':id')
-      async uppdateUser(@Param('id') id: number, @Body() data: Partial<ProductsDTO>) {
+      async updateProduit(@Param('id') id: number, @Body() data: Partial<ProductsDTO>) {
         await this.produitsService.update(id, data);
         return {
           statusCode: HttpStatus.OK,
@@ -61,7 +60,7 @@ export class ProductsController {
       }
 
       @Delete(':id')
-      async deleteUser(@Param('id') id: number) {
+      async deleteProduit(@Param('id') id: number) {
         await this.produitsService.destroy(id);
         return {
           statusCode: HttpStatus.OK,

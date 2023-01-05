@@ -23,7 +23,7 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Date)
-], ProductsEntity.prototype, "date", void 0);
+], ProductsEntity.prototype, "date_entree", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => type_entity_1.TypeEntity, (type) => type.typeProd),
     __metadata("design:type", type_entity_1.TypeEntity)

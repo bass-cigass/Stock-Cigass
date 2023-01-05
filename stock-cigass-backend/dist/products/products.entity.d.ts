@@ -3,7 +3,7 @@ import { EmplacementEntity } from 'src/emplacement/emplacement.entity';
 import { ProjetEntity } from 'src/projet/projet.entity';
 export declare class ProductsEntity {
     id: number;
-    date: Date;
+    date_entree: Date;
     type: TypeEntity;
     projet: ProjetEntity;
     emplacement: EmplacementEntity;

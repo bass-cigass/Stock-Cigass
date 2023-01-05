@@ -33,7 +33,6 @@ AppModule = __decorate([
                 useFactory: (configService) => ({
                     type: 'mysql',
                     host: configService.get(constants_1.DB_HOST),
-                    port: +configService.get(constants_1.DB_PORT),
                     username: configService.get(constants_1.DB_USER),
                     password: configService.get(constants_1.DB_PASSWORD),
                     database: configService.get(constants_1.DB_DATABASE),
